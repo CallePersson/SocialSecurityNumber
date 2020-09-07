@@ -6,6 +6,7 @@ namespace SocialSecurityNumber
 {
     class Program
     {
+    
         static void Main(string[] args)
         {
             string socialSecurityNumber;
@@ -13,8 +14,9 @@ namespace SocialSecurityNumber
             string lastName = "not assigned";
             if (args.Length != 0)
             {
-                socialSecurityNumber = (args[0]);
-                
+                firstName = (args[0]);
+                lastName = (args[1]);
+                socialSecurityNumber = (args[2]);
             }
             else
             {
@@ -43,42 +45,41 @@ namespace SocialSecurityNumber
 
             if (birthDate.Month > DateTime.Today.Month || birthDate.Month == DateTime.Today.Month && birthDate.Day > DateTime.Now.Day)
             {
-                // age = age - 1;
                 age--;
             }
 
-            //-------------------------------------------------------
             string generation = "unknown";
 
-            if ((DateTime.Now.Year - age) <= 1945)
+            int ageGen = (DateTime.Now.Year - age);
+            
+            if (ageGen <= 1945)
             {
                 generation = "Silent Generation";
             }
-            else if ((DateTime.Now.Year - age) >= 1946 && (DateTime.Now.Year - age) < 1965)
+            else if (ageGen >= 1946 && ageGen < 1965)
             {
                 generation = "Baby Boomer";
             }
-            else if ((DateTime.Now.Year - age) >= 1965 && (DateTime.Now.Year - age) < 1977)
+            else if (ageGen >= 1965 && ageGen < 1977)
             {
                 generation = "Generation X";
             }
-            else if ((DateTime.Now.Year - age) >= 1977 && (DateTime.Now.Year - age) < 1996)
+            else if (ageGen >= 1977 && ageGen < 1996)
             {
                 generation = "Millenial";
             }
-            else if ((DateTime.Now.Year - age) >= 1996)
+            else if (ageGen >= 1996)
             {
                 generation = "Gen Z";
             }
-          
 
-            //-------------------------------------------------------
             Console.Clear();
-
-
-            Console.WriteLine($"Name:\t {firstName} {lastName} \r\nSocial Security Number: {socialSecurityNumber} \r\nGender: {gender}\r\nAge: {age}\r\nGeneration: {generation} ");
+            Console.WriteLine($"{"First Name: ",-25}{firstName} {lastName}");
+            Console.WriteLine($"{"Social Security Number: ", -25}{socialSecurityNumber}");
+            Console.WriteLine($"{"Gender: ", -25}{gender}");
+            Console.WriteLine($"{"Age: ", -25}{age}");
+            Console.WriteLine($"{"Generation: ", -25}{generation} ");
                 
-
         }
     }
 }
