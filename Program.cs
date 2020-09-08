@@ -74,11 +74,12 @@ namespace SocialSecurityNumber
             }
 
             Console.Clear();
-            Console.WriteLine($"{"First Name: ",-25}{firstName} {lastName}");
-            Console.WriteLine($"{"Social Security Number: ", -25}{socialSecurityNumber}");
-            Console.WriteLine($"{"Gender: ", -25}{gender}");
-            Console.WriteLine($"{"Age: ", -25}{age}");
-            Console.WriteLine($"{"Generation: ", -25}{generation} ");
+            Console.WriteLine($@"
+            Name:                     {firstName} {lastName}
+            Social Security Number:   {socialSecurityNumber}
+            Gender:                   {gender}
+            Age:                      {age}
+            Generation:               {generation} ");
                 
         }
     }
